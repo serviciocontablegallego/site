@@ -1,0 +1,392 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Header fijo con transición */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Header con flexbox para alinear el ícono y título */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+header h1 {
+  text-align: left;
+  font-size: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+header.scrolled {
+  padding: 10px 0;
+}
+
+header.scrolled h1 {
+  font-size: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  margin-top: -8px;
+  margin-left: 20px;
+}
+
+/* Navegación */
+nav {
+  margin-top: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+header.scrolled nav {
+  display: none;
+}
+
+/* Hero */
+.hero {
+  background: url('https://images.unsplash.com/photo-1581092334431-74d2a4e5179d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  padding: 100px 0 60px;
+  position: relative;
+  color: white;
+  margin-top: 90px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  background-color: #e9f0f8;
+}
+
+.inicio-texto {
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  color: black;
+}
+
+.inicio-texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro-principal {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: black;
+}
+
+.corrido-derecha {
+  padding-left: 40px;
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+.btn {
+  background: #0066cc;
+  color: white;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.btn:hover {
+  background-color: #004c99;
+}
+
+.servicios, .nosotros, .contacto {
+  padding: 40px 0;
+  background-color: white;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.servicio-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+
+.servicio-flex.izquierda .card { order: 1; }
+.servicio-flex.izquierda .imagen-servicio { order: 2; }
+.servicio-flex.derecha .card { order: 2; }
+.servicio-flex.derecha .imagen-servicio { order: 1; }
+
+.imagen-servicio {
+  flex: 1;
+  min-width: 250px;
+}
+
+.imagen-servicio img {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 85%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.card {
+  background-color: #e9f0f8;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: start;
+  transition: all 0.3s ease-in-out;
+  flex: 1;
+  min-width: 280px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.titulo-servicio {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* Soluciones y Nosotros */
+.soluciones-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.soluciones-img, .nosotros-img {
+  flex: 1;
+  min-width: 300px;
+}
+
+.soluciones-img img, .nosotros-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.soluciones-texto, .nosotros-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.texto-soluciones p,
+.texto-nosotros p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.sin-justificar {
+  text-align: left;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: #003366;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0066cc;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* Animación Scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lista-corrida {
+  /* list-style-position: inside; */
+  padding-left: 40px;
+  margin-left: -28px;
+  text-align: start;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 2.2rem;
+    margin-top: -8px;
+    margin-right: 10px;
+    order: 2;
+  }
+
+  .header-container {
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    background-color: #003366;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  nav.activo {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .inicio-texto h2 {
+    font-size: 2rem;
+  }
+
+  .servicio-flex {
+    flex-direction: column !important;
+  }
+
+  .soluciones-grid {
+    flex-direction: column;
+  }
+
+  .imagen-servicio img {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .sin-justificar-movil {
+    text-align: left !important;
+  }
+
+  .sin-justificar-movil strong {
+    display: inline-block;
+    text-align: left;
+    margin-left: 0;
+  }
+}
